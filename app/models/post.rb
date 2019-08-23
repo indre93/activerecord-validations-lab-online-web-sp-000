@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
 
   def clickbait
     if !self.title.include?("Won't Believe")
-      errors
+      false
     end
   end
 
