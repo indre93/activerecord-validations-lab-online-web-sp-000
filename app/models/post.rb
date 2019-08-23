@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
   def validate(record)
     if record.title != "Won't Believe"
-      !record.valid?
+      record.errors
     end
   end
 
