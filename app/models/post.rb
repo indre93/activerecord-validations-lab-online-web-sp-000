@@ -3,9 +3,8 @@ class Post < ActiveRecord::Base
   validates :content, length: { minimum: 250 }
   validates :summary, length: { maximum: 250 }
   validates :category, inclusion: {in: ["Fiction", "Non-Finction"]}
-  validate :clickbait
 
-  def clickbait
+  def validate
     if !self.title.include?("Won't Believe")
       false
     end
