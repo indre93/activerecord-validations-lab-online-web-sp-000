@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: {in: ["Fiction", "Non-Finction"]}
 
   def validate(record)
+    record = Post.new
     if record.title != "Won't Believe" || record.title != "Secret" || record.title != "Top" || record.title != "Guess"
       record.errors
     end
