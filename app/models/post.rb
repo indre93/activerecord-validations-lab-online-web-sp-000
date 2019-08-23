@@ -9,7 +9,6 @@ class Post < ActiveRecord::Base
     if @record.title != "Won't Believe"
       !@record.valid?
     end
-    end
   end
 
 
