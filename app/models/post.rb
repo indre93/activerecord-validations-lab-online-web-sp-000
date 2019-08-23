@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
   def validate
     if self.title != "Won't Believe" || self.title != "Secret" || self.title != "Top" || self.title != "Guess"
-      record.errors.message
+      self.valid? == false
     end
     end
   end
