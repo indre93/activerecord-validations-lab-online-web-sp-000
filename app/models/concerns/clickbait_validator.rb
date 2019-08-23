@@ -1,7 +1,7 @@
-class clickbaitValidator < ActiveModel::Validator
-  def validate(record)
-    if record.density > 20
-      record.errors.add(:density, “is too high to safely ship”)
+class clickbaitValidator < ActiveModel::EachValidator
+  def validate_each(record, attribute, value)
+    if value != "Won't Believe" || value != "Secret" || value != "Top" || value != "Guess"
+      record.errors
     end
   end
 end
